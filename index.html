@@ -5,231 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shreyash Patil | Embedded Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --bg:#000;
-  --text:#fff;
-  --gray:#aaa;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:'Space Grotesk', sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  overflow-x:hidden;
-}
-
-/* Cursor Cat */
-.cat{
-  position:fixed;
-  width:40px;
-  pointer-events:none;
-  z-index:9999;
-  transition:transform 0.1s linear;
-}
-
-section{
-  min-height:100vh;
-  padding:100px 10%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s ease;
-}
-
-section.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-h1{
-  font-size:60px;
-  font-weight:700;
-}
-
-h2{
-  font-size:36px;
-  margin-bottom:20px;
-}
-
-p{
-  font-size:18px;
-  color:var(--gray);
-  line-height:1.7;
-  max-width:700px;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:12px 30px;
-  border:2px solid #fff;
-  color:#fff;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-.btn:hover{
-  background:#fff;
-  color:#000;
-}
-
-.meme{
-  margin-top:40px;
-  max-width:400px;
-  filter:grayscale(100%);
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-  margin-top:40px;
-}
-
-.card{
-  border:1px solid #fff;
-  padding:25px;
-  transition:0.3s;
-}
-
-.card:hover{
-  background:#fff;
-  color:#000;
-}
-
-footer{
-  text-align:center;
-  padding:40px;
-  color:var(--gray);
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" class="cat" id="cat">
+<canvas id="particleCanvas"></canvas>
+<div class="scanlines"></div>
 
-<!-- HERO -->
+<!-- BOOT TERMINAL -->
+<div id="bootTerminal">
+  <pre id="bootText"></pre>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent">
+
 <section>
-  <h1>Shreyash Patil</h1>
+  <h1 class="glitch" data-text="Shreyash Patil">Shreyash Patil</h1>
   <h2>Embedded Systems & Firmware Engineer</h2>
-  <p>
-    Automotive Ethernet | STM32 | CAN | Linux  
-    Engineering systems that actually work on hardware.
-  </p>
   <a href="Shreyash_Patil_Resume_lv.pdf" class="btn" download>Download Resume</a>
 </section>
 
-<!-- ABOUT -->
 <section>
-  <h2>About Me</h2>
-  <p>
-    Engineer focused on firmware validation, automotive Ethernet PHY integration,
-    and board-level debugging. Comfortable working close to silicon and solving
-    cross-layer hardware-software issues.
-  </p>
-
-  <img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" class="meme">
-
-  <p>
-    When firmware works in simulation but fails on hardware —
-    that’s where real engineering begins.
-  </p>
+  <h2>Live GitHub Projects</h2>
+  <div id="githubProjects" class="grid"></div>
 </section>
 
-<!-- EXPERIENCE -->
 <section>
-  <h2>Experience</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Ethernovia</h3>
-      <p>
-        Automotive Ethernet PHY validation, MDIO configuration,
-        board bring-up, firmware integration, interoperability testing.
-      </p>
-    </div>
-    <div class="card">
-      <h3>Firmware Optimization</h3>
-      <p>
-        Refactoring embedded modules, improving maintainability,
-        validating across automotive temperature conditions.
-      </p>
-    </div>
+  <h2>Embedded Terminal</h2>
+  <div id="terminalBox">
+    <div id="output"></div>
+    <input type="text" id="command" placeholder="Type command...">
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section>
-  <h2>Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>COVAS – STM32 CAN System</h3>
-      <p>
-        Dual ECU communication using CAN protocol
-        for collision avoidance and vehicle automation.
-      </p>
-    </div>
+</div>
 
-    <div class="card">
-      <h3>LiDAR Accident Prevention</h3>
-      <p>
-        Real-time obstacle detection with automatic braking logic.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>DoorMate – IoT RFID Lock</h3>
-      <p>
-        RFID-based access control with real-time monitoring.
-      </p>
-    </div>
-  </div>
-
-  <img src="https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif" class="meme">
-</section>
-
-<!-- CONTACT -->
-<section>
-  <h2>Contact</h2>
-  <p>Email: shresp3002@gmail.com</p>
-  <p>GitHub: github.com/Shres0</p>
-  <p>LinkedIn: linkedin.com/in/shreyash-patil2002</p>
-</section>
-
-<footer>
-  © 2026 Shreyash Patil — Built with Discipline.
-</footer>
-
-<script>
-/* Scroll Reveal */
-const sections = document.querySelectorAll("section");
-window.addEventListener("scroll",()=>{
-  const trigger = window.innerHeight * 0.85;
-  sections.forEach(sec=>{
-    const top = sec.getBoundingClientRect().top;
-    if(top < trigger){
-      sec.classList.add("show");
-    }
-  });
-});
-
-/* Cursor Cat Tracker */
-const cat = document.getElementById("cat");
-document.addEventListener("mousemove", (e)=>{
-  cat.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-});
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/terminal.js"></script>
+<script src="js/github.js"></script>
+<script src="js/chip3d.js"></script>
+<script src="js/terminalConsole.js"></script>
+<script src="js/scroll.js"></script>
 
 </body>
 </html>
